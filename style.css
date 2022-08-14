@@ -1,1 +1,58 @@
-Personal-Blog-Website
+* {
+    box-sizing: border-box;
+  }
+
+  /* Color scheme: 
+  #F2D7D5
+  #EBDEF0
+   */
+
+body {
+    display: grid;
+    grid: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header header"
+    "navigation main main main"
+    "footer footer footer footer";
+    gap: 10px;
+    background-color: #A9CCE3;
+}
+
+header {
+    grid-area: header;
+    background-color: #F2D7D5;
+    font-weight: bold;
+}
+h1 {
+    color: #CD6155;
+}
+
+nav {
+    grid-area: navigation;
+    background-color: #EBDEF0;
+}
+
+h3 {
+    color: #AF7AC5;
+}
+
+main {
+    grid-area: main;
+    background-color: #D5F5E3;
+}
+
+h2 {
+    color: #58D68D;
+    text-decoration: underline;
+}
+
+article > p {
+    font-style: italic;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #FFFEBD;
+    color: #95A5A6;
+}
