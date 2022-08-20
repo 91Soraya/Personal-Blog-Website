@@ -2,10 +2,6 @@
   box-sizing: content-box;
 }
 
-body {
-  display: grid;
-}
-
 h2 {
   background-color: #dec8c2;
   border-radius: 50px;
@@ -57,8 +53,8 @@ article {
 }
 
 aside {
+    grid-area: side;
   margin: 1.5em;
-  grid-area: side;
 }
 
 .social > a {
@@ -93,18 +89,18 @@ footer {
   grid-area: footer;
 }
 
-@media all and (max-width: 599px) {
+@media (max-width: 599px) {
   body {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      "navigation navigation"
-      "article article"
-      "about about"
-      "side side"
-      "footer footer";
+      "navigation"
+      "article"
+      "about"
+      "side"
+      "footer";
   }
 }
 

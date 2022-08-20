@@ -194,11 +194,7 @@ td {
             "main"
             "side"
             "footer";
-        /* gap: 10px; */
-    }
-
-    article {
-        width: 100%;
+        gap: 10px;
     }
 }
 
