@@ -1,58 +1,232 @@
 * {
-    box-sizing: border-box;
-  }
-
-  /* Color scheme: 
-  #F2D7D5
-  #EBDEF0
-   */
+    box-sizing: content-box;
+}
 
 body {
-    display: grid;
-    grid: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    "header header header header"
-    "navigation main main main"
-    "footer footer footer footer";
-    gap: 10px;
-    background-color: #A9CCE3;
+    background-color: #dec8c2;
 }
 
 header {
     grid-area: header;
-    background-color: #F2D7D5;
-    font-weight: bold;
-}
-h1 {
-    color: #CD6155;
-}
-
-nav {
-    grid-area: navigation;
-    background-color: #EBDEF0;
-}
-
-h3 {
-    color: #AF7AC5;
+    background-color: #69acc0;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px 20px;
 }
 
 main {
     grid-area: main;
-    background-color: #D5F5E3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #69acc0;
+    border-radius: 25px;
 }
 
-h2 {
-    color: #58D68D;
-    text-decoration: underline;
+article {
+    width: 300px;
+    margin: 10px;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px;
+    border: solid thin grey;
+    text-align: center;
+    background: radial-gradient(circle,
+            rgba(105, 172, 192, 1) 0%,
+            rgba(222, 200, 194, 1) 100%);
 }
 
-article > p {
-    font-style: italic;
+article>img {
+    width: 100%;
+    border-radius: 30%;
+}
+
+nav {
+    grid-area: navigation;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+h6 {
+    font-size: x-large;
+    margin: 16px;
+    color: #69acc0;
+}
+
+button {
+    height: 2em;
+    margin: 16px;
+    background-color: #69acc0;
+    border-radius: 25px;
 }
 
 footer {
     grid-area: footer;
-    background-color: #FFFEBD;
-    color: #95A5A6;
+    padding: 10px;
+}
+
+.contact {
+    background: radial-gradient(circle,
+            rgba(105, 172, 192, 1) 0%,
+            rgba(222, 200, 194, 1) 100%);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    width: 30%;
+}
+
+article a {
+    background-color: grey;
+    border-radius: 10px;
+    padding: 0 20px;
+    border: solid thin grey;
+    text-decoration: none;
+    color: black;
+}
+
+article a:hover {
+    background-color: grey;
+    color: white;
+}
+
+.toplist {
+    list-style: square;
+    color: #69acc0;
+}
+
+.toplist {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #dec8c2;
+}
+
+aside {
+    grid-area: side;
+    background-color: #69acc0;
+    border-radius: 25px;
+    align-content: center;
+    padding: 1em;
+}
+
+table {
+    width: 70%;
+    justify-content: center;
+    margin: 2em;
+}
+
+td {
+    border-bottom: 1px solid grey;
+}
+
+.categories,
+.recent,
+.tags {
+    border: solid 1px #dec8c2;
+    border-radius: 25px;
+    margin: 1em;
+    color: black;
+}
+
+.author {
+    display: flex;
+    flex-wrap: wrap;
+    font-style: italic;
+    align-items: center;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    padding: 1em;
+}
+
+.taglist {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.taglist>li {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.recent {
+    padding-left: 2em;
+}
+
+.recent>ul {
+    list-style: square;
+}
+
+.recent>ul>li {
+    padding: 1em;
+}
+
+.copyright {
+    margin-top: 10px;
+    padding: 1em;
+}
+
+@media all and (max-width: 599px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "navigation"
+            "header"
+            "main"
+            "side"
+            "footer";
+        /* gap: 10px; */
+    }
+
+    article {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 600px) and (max-width: 950px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "navigation navigation"
+            "header header"
+            "main main"
+            "side side"
+            "footer footer";
+        gap: 10px;
+    }
+}
+
+@media all and (min-width: 951px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "navigation navigation navigation navigation"
+            "header header header header"
+            "main main main side"
+            "footer footer footer footer";
+        gap: 10px;
+    }
 }
