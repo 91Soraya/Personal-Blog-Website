@@ -1,0 +1,15 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "nav nav nav nav nav"
+    "header header header header header"
+    "main main main main side"
+    "footer footer footer footer footer";
+  gap: 10px;
+}
+
+article {
+  width: 25%;
+}

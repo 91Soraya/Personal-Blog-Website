@@ -53,7 +53,7 @@ article {
 }
 
 aside {
-    grid-area: side;
+  grid-area: side;
   margin: 1.5em;
 }
 
