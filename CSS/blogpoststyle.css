@@ -1,3 +1,8 @@
+@import "/CSS/blog-s.css" (max-device-width: 599px);
+@import "/CSS/blog-m.css" (min-device-width: 600px) and
+  (max-device-width: 950px);
+@import "/CSS/blog-l.css" (min-device-width: 951px);
+
 * {
   box-sizing: content-box;
 }
@@ -28,14 +33,22 @@ header {
 }
 
 nav {
-  grid-area: navigation;
+  grid-area: nav;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
-img {
-  border-radius: 25px;
+p > img {
+  border-radius:25px;
+  width: 90%;
+}
+
+figure {
+  width: 80%;
+  align-self: center;
+  margin: 0;
 }
 
 blockquote {
@@ -44,7 +57,7 @@ blockquote {
 }
 
 article {
-  width: 100%;
+  width: 80%;
   margin-left: 20px;
   background: none;
   border: none;
@@ -87,47 +100,4 @@ aside {
 
 footer {
   grid-area: footer;
-}
-
-@media (max-width: 599px) {
-  body {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "navigation"
-      "article"
-      "about"
-      "side"
-      "footer";
-  }
-}
-
-@media all and (min-width: 600px) and (max-width: 950px) {
-  body {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "navigation navigation"
-      "article side"
-      "about side"
-      "footer footer";
-    gap: 10px;
-  }
-}
-
-@media all and (min-width: 951px) {
-  body {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "navigation navigation"
-      "article side"
-      "about side"
-      "footer footer";
-    gap: 10px;
-  }
 }
